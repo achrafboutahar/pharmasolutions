@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #menu {
+            color: black;
+        }
+
+        .dropdown-menu {
+            color: green;
+        }
+
+        div {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="menu" class="dropdown-menu">hello</div>
+
+    <script>
+        const delay = ms => new Promise(res => setTimeout(res, ms));
+
+        async function asyncCallFirst() {
+            await delay(3000);
+            console.log('async call 1');
+        }
+
+        async function asyncCallSecond() {
+            await delay(1000);
+            console.log('async call 2');
+        }
+
+        (async () => {
+            asyncCallFirst();
+            await asyncCallSecond();
+        })();
+    </script>
+
+</body>
+
+</html>
